@@ -94,9 +94,9 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'zurdnas69vi3mngr',
-            'USER': os.environ['USER'],
-            'PASSWORD': os.environ['NAME'],
-            'HOST': 'bodegas-test.cwfjpti9xfgj.us-east-2.rds.amazonaws.com',
+            'USER': 'njzcprcc1v9ce8q1',
+            'PASSWORD': 'mzyttqnm82eu6d5z',
+            'HOST': 'dt3bgg3gu6nqye5f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	',
             'PORT': '3306'
         }
     } 
