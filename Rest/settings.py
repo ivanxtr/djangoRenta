@@ -96,7 +96,7 @@ else:
             'NAME': 'zurdnas69vi3mngr',
             'USER': os.environ['USER'],
             'PASSWORD': os.environ['NAME'],
-            'HOST': 'dt3bgg3gu6nqye5f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+            'HOST': 'bodegas-test.cwfjpti9xfgj.us-east-2.rds.amazonaws.com',
             'PORT': '3306'
         }
     } 

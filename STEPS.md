@@ -27,7 +27,7 @@ python3 manage.py startapp [name]
 ```
 
 ## Create super user
-``` 
+``` python 
 python3 manage.py createsuperuser
 ```
 
