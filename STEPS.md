@@ -121,6 +121,13 @@ heroku ps:scale web=1
 heroku run python manage.py migrate
 ```
 
+## Console
+```
+heroku login
+heroku run bash -a APPNAME
+$ cd app 
+```
+
 ## Logs 
 ``` 
 heroku logs --tail -a [app-name]
@@ -131,7 +138,3 @@ heroku logs --tail -a [app-name]
 web: gunicorn [WSGI_APPLICATION].wsgi --log-file -
 example : web: gunicorn Rest.wsgi --log-file -
 ```
-
-mysql -h database-1.cwfjpti9xfgj.us-east-2.rds.amazonaws.com -P 3306 -u root -p zurdnas69vi3mngr
-
-mysql -h dt3bgg3gu6nqye5f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com -P 3306 -u njzcprcc1v9ce8q1 -p mzyttqnm82eu6d5z
