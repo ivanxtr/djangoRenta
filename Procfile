@@ -1,1 +1,1 @@
-web: gunicorn bodegas-api.wsgi --log-file -
+web: gunicorn Rest.wsgi --log-file -
