@@ -24,16 +24,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if os.environ['DEV']:
+if os.environ['DEV'] is True:
     DEBUG = True
 else:
     DEBUG = False
 
 ALLOWED_HOSTS = ['bodegas-api.herokuapp.com', 'localhost']
 
-
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -80,7 +78,7 @@ WSGI_APPLICATION = 'Rest.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-if os.environ['DEV']:
+if os.environ['DEV'] is True:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
@@ -95,10 +93,10 @@ else:
    DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ['NAME'],
+            'NAME': 'zurdnas69vi3mngr',
             'USER': os.environ['USER'],
-            'PASSWORD': os.environ['PASSWORD'],
-            'HOST': os.environ['HOST'],
+            'PASSWORD': os.environ['NAME'],
+            'HOST': 'dt3bgg3gu6nqye5f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
             'PORT': '3306'
         }
     } 
