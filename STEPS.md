@@ -102,3 +102,17 @@ urlpatterns = [
 
 - @csrf_exempt to aviod the token validation
 from django.views.decorators.csrf import csrf_exempt
+
+## Heroku 
+```
+install heroku-cli
+heroku login
+heroku config:set DISABLE_COLLECTSTATIC=1 -a [app-name]
+```
+
+``` 
+heroku container:login
+heroku create
+heroku container:push [docker-container] -a [app-name]
+heroku container:release [docker-container] -a [app-name]
+```

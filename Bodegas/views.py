@@ -5,7 +5,6 @@ from rest_framework import status
 from rest_framework.views import APIView
 from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-import os
 
 from .models import Listing
 from .serializers import ListingSerializers
