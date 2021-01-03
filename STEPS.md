@@ -124,7 +124,7 @@ heroku run python manage.py migrate
 ## Console
 ```
 heroku login
-heroku run bash -a APPNAME
+heroku run bash -a [APPNAME]
 $ cd app 
 ```
 
