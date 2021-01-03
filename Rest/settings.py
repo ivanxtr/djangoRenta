@@ -24,7 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+if os.environ['DEV']:
+    DEBUG = True
+else:
+    DEBUG = False
 
 ALLOWED_HOSTS = ['bodegas-api.herokuapp.com', 'localhost']
 
@@ -77,17 +80,28 @@ WSGI_APPLICATION = 'Rest.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'bodegas',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'db',
-        'PORT': '3306'
+if os.environ['DEV']:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'bodegas',
+            'USER': 'root',
+            'PASSWORD': 'root',
+            'HOST': 'db',
+            'PORT': '3306'
+        }
     }
-}
+else:
+   DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': os.environ['NAME'],
+            'USER': os.environ['USER'],
+            'PASSWORD': os.environ['PASSWORD'],
+            'HOST': os.environ['HOST'],
+            'PORT': '3306'
+        }
+    } 
 
 
 # Password validation

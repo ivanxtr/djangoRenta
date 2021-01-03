@@ -125,3 +125,9 @@ heroku run python manage.py migrate
 ``` 
 heroku logs --tail -a [app-name]
 ```
+
+## Procfile config
+```
+web: gunicorn [WSGI_APPLICATION].wsgi --log-file -
+example : web: gunicorn Rest.wsgi --log-file -
+```
