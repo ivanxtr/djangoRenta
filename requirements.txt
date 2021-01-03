@@ -5,3 +5,4 @@ django-mysql==3.9
 django-cors-headers==3.5.0
 Pillow==7.0.0
 gunicorn==19.7.1
+whitenoise==3.3.1
