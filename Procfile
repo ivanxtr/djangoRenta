@@ -1,0 +1,1 @@
+web: gunicorn bodegas-api.wsgi --log-file -

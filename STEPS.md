@@ -105,14 +105,23 @@ from django.views.decorators.csrf import csrf_exempt
 
 ## Heroku 
 ```
+https://www.codementor.io/@jamesezechukwu/how-to-deploy-django-app-on-heroku-dtsee04d4
 install heroku-cli
 heroku login
 heroku config:set DISABLE_COLLECTSTATIC=1 -a [app-name]
 ```
 
+## Deploy Container
 ``` 
 heroku container:login
 heroku create
 heroku container:push [docker-container] -a [app-name]
 heroku container:release [docker-container] -a [app-name]
+heroku ps:scale web=1
+heroku run python manage.py migrate
+```
+
+## Logs 
+``` 
+heroku logs --tail -a [app-name]
 ```
