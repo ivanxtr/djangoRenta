@@ -96,7 +96,7 @@ else:
             'NAME': 'zurdnas69vi3mngr',
             'USER': 'njzcprcc1v9ce8q1',
             'PASSWORD': 'mzyttqnm82eu6d5z',
-            'HOST': 'dt3bgg3gu6nqye5f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com	',
+            'HOST': 'dt3bgg3gu6nqye5f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
             'PORT': '3306'
         }
     } 
