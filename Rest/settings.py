@@ -27,7 +27,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 if os.environ['DEV'] is True:
     DEBUG = True
 else:
-    DEBUG = False
+    DEBUG = True
 
 ALLOWED_HOSTS = ['bodegas-api.herokuapp.com', 'localhost', 'localhost:3000']
 
@@ -157,3 +157,9 @@ STATICFILES_DIRS = (
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Base url to serve media files
+MEDIA_URL = '/media/'
+
+# Path where media is stored
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

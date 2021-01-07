@@ -7,12 +7,12 @@ from rest_framework.authentication import SessionAuthentication, BasicAuthentica
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Listing
-from .serializers import ListingSerializers
+from .serializers import ListingSerializers, ListingsSerialiers
 
 class ListingAPIView(APIView):
   def get(self, request):
     Listings = Listing.objects.all()
-    serializer = ListingSerializers(Listings, many=True)
+    serializer = ListingsSerialiers(Listings, many=True)
     return Response(serializer.data)
 
 class ListingDetails(APIView):
