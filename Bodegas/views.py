@@ -12,7 +12,7 @@ from .serializers import ListingSerializers, ListingsSerialiers
 
 class ListingAPIView(APIView):
   def get(self, request):
-    Listings = Listing.objects.filter(transaction_type='RNT') 
+    Listings = Listing.objects.filter(transaction_type='RNT').order_by('id') 
     paginator = Paginator(Listings, 9)   
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
