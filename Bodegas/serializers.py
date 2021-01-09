@@ -10,3 +10,8 @@ class ListingsSerialiers(serializers.ModelSerializer):
     class Meta:
         model = Listing
         fields = ['id', 'price', 'sqft', 'lot_size', 'office', 'dock', 'industrial_park', 'vigilancia', 'parking', 'address', 'photo_1']
+
+class ListingsCountSerializers(serializers.ModelSerializer):
+    class Meta:
+        model = Listing
+        fields = ['id']

@@ -8,15 +8,14 @@ from rest_framework.authentication import SessionAuthentication, BasicAuthentica
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Listing
-from .serializers import ListingSerializers, ListingsSerialiers
+from .serializers import ListingSerializers, ListingsSerialiers, ListingsCountSerializers
 
 class ListingAPIView(APIView):
   def get(self, request):
-    Listings = Listing.objects.filter(transaction_type='RNT').order_by('id') 
+    Listings = Listing.objects.filter(transaction_type='RNT', is_published=True).order_by('id') 
     paginator = Paginator(Listings, 9)   
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    # Listings = Listing.objects.all()
     serializer = ListingsSerialiers(page_obj, many=True)
     return Response(serializer.data)
 
@@ -65,3 +64,9 @@ class ListingOptions(APIView):
     Listing = self.get_object(id)
     Listing.delete()
     return HttpResponse(status=status.HTTP_204_NO_CONTENT)  
+
+class GetListingsCount(APIView):
+  def get(self, request):
+    Listings = Listing.objects.filter(transaction_type='RNT', is_published=True)
+    serializer = ListingsCountSerializers(Listings, many=True)
+    return Response(serializer.data)
