@@ -11,7 +11,8 @@ from .serializers import ListingSerializers, ListingsSerialiers
 
 class ListingAPIView(APIView):
   def get(self, request):
-    Listings = Listing.objects.all()
+    Listings = Listing.objects.filter(transaction_type='RNT')    
+    # Listings = Listing.objects.all()
     serializer = ListingsSerialiers(Listings, many=True)
     return Response(serializer.data)
 
