@@ -3,5 +3,5 @@
 /db.sqlite3
 /media
 .DS_Store
-/Bodegas/__py_cache__/
+/Bodegas/__py_cache__
 /Rest/__pycache__
