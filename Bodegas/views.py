@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+from django.core.paginator import Paginator
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework.views import APIView
@@ -11,9 +12,12 @@ from .serializers import ListingSerializers, ListingsSerialiers
 
 class ListingAPIView(APIView):
   def get(self, request):
-    Listings = Listing.objects.filter(transaction_type='RNT')    
+    Listings = Listing.objects.filter(transaction_type='RNT') 
+    paginator = Paginator(Listings, 6)   
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     # Listings = Listing.objects.all()
-    serializer = ListingsSerialiers(Listings, many=True)
+    serializer = ListingsSerialiers(page_obj, many=True)
     return Response(serializer.data)
 
 class ListingDetails(APIView):

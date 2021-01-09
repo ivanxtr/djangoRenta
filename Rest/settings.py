@@ -143,6 +143,7 @@ USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://localhost:8001",
     "http://127.0.0.1:9000"
 ]
 
