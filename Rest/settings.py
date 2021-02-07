@@ -29,7 +29,7 @@ if os.environ['DEV'] is True:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['bodegas-api.herokuapp.com', 'localhost', 'localhost:3000']
+ALLOWED_HOSTS = ['bodegas-api.herokuapp.com', 'localhost', 'localhost:3000', 'bodegas-react-ssr.herokuapp.com']
 
 # Application definition
 INSTALLED_APPS = [
@@ -144,7 +144,8 @@ USE_TZ = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:8001",
-    "http://127.0.0.1:9000"
+    "http://127.0.0.1:9000",
+    "bodegas-react-ssr.herokuapp.com"
 ]
 
 # Static files (CSS, JavaScript, Images)

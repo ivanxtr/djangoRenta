@@ -6,16 +6,17 @@ CHOICES = (
     ('------','------'),
     ('bodega','BODEGA'),
     ('terreno','TERRENO'),
+    ('local','LOCAL')
 )
 
 STATE_CHOICES = (
     ('------','------'),
-    ('GDL','Guadalajara'),
-    ('ZAP','Zapopan'),
-    ('TLJ','Tlajomulco'),
-    ('TNL','Tonala'),
-    ('CHA','Chapala'),
-    ('STL','El Salto'),
+    ('Guadalajara','Guadalajara'),
+    ('Zapopan','Zapopan'),
+    ('Tlajomulco','Tlajomulco'),
+    ('Tonala','Tonala'),
+    ('Chapala','Chapala'),
+    ('El Salto','El Salto'),
 )
 
 TRANSACTION_CHOICES = (
