@@ -12,7 +12,24 @@ from .serializers import ListingSerializers, ListingsSerialiers, ListingsCountSe
 
 class ListingAPIView(APIView):
   def get(self, request):
-    Listings = Listing.objects.filter(transaction_type='RNT', is_published=True).order_by('id') 
+    Listings = Listing.objects.filter(property_type='bodega', transaction_type='RNT', is_published=True).order_by('id') 
+    paginator = Paginator(Listings, 9)   
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    serializer = ListingsSerialiers(page_obj, many=True)
+    return Response(serializer.data)
+
+class ShopAPIView(APIView):
+  def get(self, request):
+    Listings = Listing.objects.filter(property_type='bodega', transaction_type='VNT', is_published=True).order_by('id') 
+    paginator = Paginator(Listings, 9)   
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    serializer = ListingsSerialiers(page_obj, many=True)
+    return Response(serializer.data)
+class LocaleAPIView(APIView):
+  def get(self, request):
+    Listings = Listing.objects.filter(property_type='local', is_published=True).order_by('id') 
     paginator = Paginator(Listings, 9)   
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
