@@ -43,7 +43,7 @@ class Listing(models.Model):
   industrial_park = models.BooleanField(default=False)
   vigilancia = models.BooleanField(default=False)
   parking = models.BooleanField(default=False)
-  photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
+  photo_main = models.CharField(max_length=200, blank=True)
   photo_1 = models.CharField(max_length=200, blank=True)
   photo_2 = models.CharField(max_length=200, blank=True)
   photo_3 = models.CharField(max_length=200, blank=True)
