@@ -29,7 +29,7 @@ if os.environ['DEV'] is True:
 else:
     DEBUG = True
 
-ALLOWED_HOSTS = ['bodegas-api.herokuapp.com', 'localhost', 'localhost:3000', 'bodegas-react-ssr.herokuapp.com']
+ALLOWED_HOSTS = ['bodegas-api.herokuapp.com', 'localhost', 'localhost:3000', 'bodegas-react-ssr.herokuapp.com', 'solo-bodegas.com']
 
 # Application definition
 INSTALLED_APPS = [
