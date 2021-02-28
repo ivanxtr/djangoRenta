@@ -84,6 +84,17 @@ class ListingOptions(APIView):
 
 class GetListingsCount(APIView):
   def get(self, request):
-    Listings = Listing.objects.filter(transaction_type='RNT', is_published=True)
+    Listings = Listing.objects.filter(property_type='bodega', transaction_type='RNT', is_published=True)
+    serializer = ListingsCountSerializers(Listings, many=True)
+    return Response(serializer.data)
+class GetShopCount(APIView):
+  def get(self, request):
+    Listings = Listing.objects.filter(property_type='bodega', transaction_type='VNT', is_published=True)
+    serializer = ListingsCountSerializers(Listings, many=True)
+    return Response(serializer.data)
+
+class GetLocaleCount(APIView):
+  def get(self, request):
+    Listings = Listing.objects.filter(property_type='local', is_published=True)
     serializer = ListingsCountSerializers(Listings, many=True)
     return Response(serializer.data)
